@@ -1,3 +1,3 @@
-module jose686634/Go-learn
+module github.com/Go-learn
 
 go 1.17
