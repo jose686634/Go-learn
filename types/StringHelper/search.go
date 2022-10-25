@@ -23,8 +23,8 @@ func RecommendMatch(strSlice *[]string, searchWord string) []string {
 			the string  is then appended to a string slice and returned
 	*/
 	data := []byte("\x00" + strings.Join(*strSlice, "\x00") + "\x00")
-	sa := suffixarray.New(data)
-	indices := sa.Lookup([]byte(searchWord), -1)
+	sa := suffixarray.New(data)                  // creates a typed/struct named Index and returns a pointer of it.
+	indices := sa.Lookup([]byte(searchWord), -1) // Lookup is a mthod of Index type/struct that return a []int of indexes
 
 	var strResult []string
 	for _, ind := range indices {
